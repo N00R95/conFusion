@@ -1,16 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<hea  <!-- Required meta tags always come first -->
+<head>
+  <!-- Required meta tags always come first -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<style>
+  .row-header {
+  margin: 0px auto;
+  padding: 0px auto;
+}
+
+.row-content {
+  margin: 0 auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px;
+}
+
+.footer {
+  background-color: #D1C4E9;
+  margin: 0px auto;
+  padding: 20px 0px 20px 0px;
+}
+
+.jumbotron {
+  padding: 70px 30px 70px 30px;
+  margin: 0px auto;
+  background: #9575CD;
+  color: floralwhite;
+}
+
+.address {
+  font-size: 90%;
+  margin: 0px;
+  color: #0f0f0f;
+}
+
+body {
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
+}
+
+.navbar-dark {
+  background-color: #512DA8;
+}
+
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.carousel {
+  background: #512DA8
+}
+
+.carousel-item {
+  height: 300px;
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 300px;
+}
+</style>
   <title>Ristorante Con Fusion</title>
 </head>
 
@@ -30,7 +96,7 @@
           <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
         </ul>
         <span class="navbar-text">
-          <a id="loginButton"><span class="fa fa-sign-in"></span> Login</a>
+          <a data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in"></span> Login</a>
         </span>
       </div>
     </div>
@@ -111,10 +177,10 @@
               <div class="col-12 col-sm-4">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                   <label class="btn btn-success active">
-                    <input type="radio" name="section" value="non_smoking" id="non_smoking" checked>Non-Smoking
+                    <input type="radio" name="section" value="non_smoking" id="non_smoking" autocomplete="off" checked>Non-Smoking
                   </label>
                   <label class="btn btn-danger">
-                    <input type="radio" name="section" value="smoking" id="smoking">Smoking
+                    <input type="radio" name="section" value="smoking" id="smoking" autocomplete="off">Smoking
                   </label>
                 </div>
               </div>
@@ -151,7 +217,7 @@
           <img src="img/logo.png" class="img-fluid" alt="Ristorante con Fusion">
         </div>
         <div class="col-12 mt-5 mt-sm-0 col-sm-3 text-center align-self-center">
-          <button type="button" class="btn btn-block nav-link btn-warning" id="reserveButton">Reserve table</button>
+          <button type="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reservationModal">Reserve table</button>
         </div>
       </div>
     </div>
@@ -198,9 +264,6 @@
           <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon"></span>
           </a>
-          <button class="btn btn-danger btn-sm" id="carouselButton">
-            <span id="carousel-button-icon" class="fa fa-pause"></span>
-          </button>
         </div>
       </div>
     </div>
@@ -299,34 +362,7 @@
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("#mycarousel").carousel({
-        interval: 2000
-      });
-      $("#carouselButton").click(function() {
-        if ($("#carouselButton").children('span').hasClass('fa-pause')) {
-          $("#mycarousel").carousel('pause');
-          $("#carouselButton").children('span').removeClass('fa-pause');
-          $("#carouselButton").children('span').addClass('fa-play');
-        } else {
-          $("#mycarousel").carousel('cycle');
-          $("#carouselButton").children('span').removeClass('fa-play');
-          $("#carouselButton").children('span').addClass('fa-pause');
-        }
-      });
-      $('#loginButton').click(function() {
-        $('#loginModal').modal('show');
-      });
-      $('#reserveButton').click(function() {
-        $('#reservationModal').modal('show');
-      });
 
-    });
-  </script>
-
-_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
